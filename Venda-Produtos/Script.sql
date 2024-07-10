@@ -23,8 +23,8 @@ Id INT AUTO_INCREMENT PRIMARY KEY,
 Nome VARCHAR(255) NOT NULL,
 Descricao TEXT,
 Preco DECIMAL(10, 2) NOT NULL,
-Quantidade_Estoque INT NOT NULL,
-Imagem_Url VARCHAR(255) INT NULL
+QuantidadeEmEstoque INT NOT NULL,
+ImagemUrl VARCHAR(255) INT NULL
 );
 
 -- Tabela de Vendas
