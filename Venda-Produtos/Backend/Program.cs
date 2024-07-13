@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace YourNamespace
-{
+namespace ProdutoWeb{
     public class Program
     {
         public static void Main(string[] args)
