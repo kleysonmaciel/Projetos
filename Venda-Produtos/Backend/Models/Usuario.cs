@@ -1,10 +1,10 @@
 namespace MyApp.Models{
     public class Usuario{
-        public string Id { get; set;}
-        public string Name { get; set;}
-        public string Sobrenome { get; set;}
+        public string id { get; set;}
+        public string name { get; set;}
+        public string sobrenome { get; set;}
         public string Email { get; set;}
-        public string CPF { get; set;}
-        public string SenhaHash { get; set;}
+        public string cpf { get; set;}
+        public string senha_hash { get; set;}
     }
 }

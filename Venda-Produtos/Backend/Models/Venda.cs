@@ -1,9 +1,9 @@
 namespace MyApp.Models{
     public class Venda{
-        public int Id { get; set;}
-        public int UsuarioId { get; set;}
-        public int ProdutoId { get; set;}
-        public int Quantidade { get; set;}
-        public DateTime DataVenda { get; set;}
+        public int id { get; set;}
+        public int usuario_id { get; set;}
+        public int produto_id { get; set;}
+        public int quantidade { get; set;}
+        public DateTime data_venda { get; set;}
     }
 }
