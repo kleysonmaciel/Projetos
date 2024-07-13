@@ -1,11 +1,19 @@
-namespace MyApp.Models
+using System.ComponentModel.DataAnnotations;
+
+namespace ProdutoWeb.Models
 {
     public class Produto{
+        [key]
         public int id { get; set; }
+        [Required]
         public string nome { get; set; }
+        [Required]
         public string descricao { get; set; }
+        [Required]
         public decimal preco { get; set; }
-        public int quantidade_Estoque { get; set; }
+        [Required]
+        public int quantidade_estoque { get; set; }
+        [Required]
         public string imagem_url { get; set; }
     }
 }
