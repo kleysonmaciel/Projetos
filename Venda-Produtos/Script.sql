@@ -1,9 +1,9 @@
 -- Criando o Banco de Dados
-CREATE DATABASE produtoDB;
+CREATE DATABASE produtodb;
 
 -- Usar o Banco de Dados criado
 
-USE produtoDB;
+USE produtodb;
 
 -- Tabela de Usuários
 
