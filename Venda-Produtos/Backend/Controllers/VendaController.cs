@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using MyApp.Models;
-using MyApp.Services;
+using ProdutoWeb.Models;
+using ProdutoWeb.Services;
 
 namespace MyApp.Controllers{
     [ApiController]
