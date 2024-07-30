@@ -36,7 +36,7 @@ namespace ProdutoWeb.Controllers{
         }
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateModel model){
-            var user = new Usuario{
+            var user = new usuario{
                 nome = model.nome,
                 sobrenome = model.sobrenome,
                 email = model.email,
@@ -50,6 +50,28 @@ namespace ProdutoWeb.Controllers{
                 return BadRquest(new{message = ex.Message});
             }
         }
-        
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateModel model){
+            var user = new UsuarioController{
+                id = id,
+                nome = model.nome,
+                sobrenome = model.sobrenome,
+                email = model.email,
+                cpf = model.cpf
+            };
+            try{
+                await _usuarioService.Update(user, model.Password);
+                return Ok();
+            }
+            catch (Exception ex){
+                return BadRquest(new{message = ex.Message});
+            }
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id){
+            await _usuarioService.Delete(id);
+            return Ok();
+        }
     }
+    
 }
