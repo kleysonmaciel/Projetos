@@ -73,5 +73,22 @@ namespace ProdutoWeb.Controllers{
             return Ok();
         }
     }
-    
+    public class AuthenticateModel{
+        public string email { get; set; }
+        public string password { get; set; }
+    }
+    public class CreateModel{
+        public string nome { get; set; }
+        public string sobrenome { get; set; }
+        public string email { get; set; }
+        public string cpf { get; set; }
+        public string password {get; set; }
+    }
+    public class UpdateModel{
+        public string nome { get; set;}
+        public string sobrenome { get; set;}
+        public string email { get; set; }
+        public string cpf { get; set; }
+        public string password{get; set;}
+    }
 }
