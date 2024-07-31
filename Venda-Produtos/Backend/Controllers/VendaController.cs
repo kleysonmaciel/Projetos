@@ -1,48 +1,53 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using ProdutoWeb.Models;
 using ProdutoWeb.Services;
 
-namespace MyApp.Controllers{
+namespace ProdutoWeb.Controllers{
     [ApiController]
     [Route("api/[controller]")]
     public class VendaController : ControllerBase{
-        private readonly VendaService _vendaService;
-        public VendaController(VendaService vendaService){
+        private readonly IVendaService _vendaService;
+        public VendaController(IVendaService vendaService){
             _vendaService = vendaService;
         }
         [HttpGet]
-        public ActionResult<List<Venda>> GetAll() => _vendaService.GetAll();
-
+        public async Task<IActionResult> GetAll(){
+            var vendas = await _vendaService.GetAll();
+            return Ok(vendas);
+        }
         [HttpGet("{id}")]
-        public ActionResult<Venda> Get(int id){
-            var venda = _vendaService.Get(id);
-            if(venda == null){
-                return NotFound();
-            }
-            return venda;
+        public async Task<IActionResult> GetById(int id){
+            var venda = await _vendaService.GetById()
+            return Ok(venda);
         }
         [HttpPost]
-        public IActionResult Create(Venda venda){
-            _vendaService.Create(venda);
-            return CreatedAtAction(nameof(Get), new{id = venda.Id}, venda);
-        }
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, Venda venda){
-            var = existingVenda = _vendaService.Get(id);
-            if(existingVenda == null){
-                return NotFoun();
+        public async Tassk<IActionResult> Create([FromBody] Venda venda){
+            try{
+                await _vendaService.Create(venda);
+                return Ok(venda);
             }
-            _vendaService.Update(id, venda);
-            return NoContent();
+            catch(Exception ex){
+                return BadRequest(new {message = ex.Message});
+            }
+        }
+        [Http("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] Venda venda){
+            venda.id = id;
+            try{
+                await _vendaService.Update(venda);
+                return Ok;
+            }
+            catch (Exception ex){
+                return BadRequest(new {message = ex.Message});
+            }
         }
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id){
-            var venda = _vendaService.Get(id)
-            if(venda == null){
-                return NotFound();
-            }
-            _vendaService.Delete(id);
-            return NoContent();
+        publiuc async async Task<IActionResult> Delete(int id){
+            await _vendaService.Delete(id);
+            return Ok();
         }
     }
 }
