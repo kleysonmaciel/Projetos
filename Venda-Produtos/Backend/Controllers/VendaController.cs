@@ -35,7 +35,9 @@ namespace ProdutoWeb.Controllers{
         }
         [Http("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] Venda venda){
+
             venda.id = id;
+            
             try{
                 await _vendaService.Update(venda);
                 return Ok;
