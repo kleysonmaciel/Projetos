@@ -1,19 +1,29 @@
 <template>
     <div class="home">
-        <h1>Bem vindo à Página Inicial</h1>
-        <p>Esta é a página Inicial da Aplicação</p>
+      <img :src="logo" alt="Logo" class="logo"/>
+      <h1>Bem-vindo à Página Inicial</h1>
+      <p>Esta é a página inicial da sua aplicação.</p>
     </div>
-</template>
-
-<script>
-export default{
-    name: 'Home'
-};
-</script>
-
-<style scoped>
-.home{
-    padding: 20px;
-    text-align: center;
-}
-</style>
+  </template>
+  
+  <script>
+  import logo from '@/assets/images/logo.png';
+  
+  export default {
+    name: "Home",
+    data() {
+      return {
+        logo
+      };
+    }
+  };
+  </script>
+  
+  <style scoped>
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  </style>
+  
