@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../styles/ClienteEdit.css';
 
-function ClienteEdit({ id }) {
+function ClienteEdit({ id, finishEdit }) {
     const [cliente, setCliente] = useState({
         id: '',
         nome: '',
@@ -52,7 +53,7 @@ function ClienteEdit({ id }) {
     if (loading) return <p>Carregando...</p>;
     if (error) return <p>{error}</p>;
     return (
-        <form onSubmit={handleSubmit} style={{marginTop: '10px'}}>
+        <form onSubmit={handleSubmit} className="edit-form">
             <h2>Editar Cliente</h2>
             <input
                 name="nome"

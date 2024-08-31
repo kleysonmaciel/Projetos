@@ -1,0 +1,19 @@
+.edit-form{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+.edit-form input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px4;
+}
+
+.edit-form button{
+    width: 100%;
+}

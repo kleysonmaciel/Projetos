@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import './styles/App.css';
 import ClienteList from './components/ClienteList';
 import ClienteForm from './components/ClienteForm';
 import ClienteEdit from './components/ClienteEdit';
