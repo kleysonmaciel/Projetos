@@ -1,2 +1,2 @@
 Projetos para portifólio
-Utilizando C#, VueJS, MariaDB, PostgreeSQL
+Utilizando C#, VueJS, JavaScript, MariaDB, PostgreeSQL
